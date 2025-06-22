@@ -1,0 +1,11 @@
+Primero, instalo como sudo el paquete python3.10-venv , para usar un entorno virtual.
+Segundo, desde el terminal de python creo un entorno virtual con el comando python -m venv firstdjango
+Tercero, activo el entorno virtual con source firstdjango/bin/activate. Desde el terminal, entrando en la carpeta. 
+--> Si quiero desactivar, simplemente escribo "deactivate"
+Cuarto, Dentro del entorno, instalo django con pip install django
+--> confirmación con python -m django --version
+Quinto, primer proyecto de jango poniendo django-admin startproject primeraWeb
+
+Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 15:20
+
+Comprobando, probando
