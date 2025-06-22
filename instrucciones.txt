@@ -6,6 +6,14 @@ Cuarto, Dentro del entorno, instalo django con pip install django
 --> confirmación con python -m django --version
 Quinto, primer proyecto de jango poniendo django-admin startproject primeraWeb
 
-Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 15:20
+=================================================================
+Sexto, estando dentro del environment ejecuto python manage.py runserver. manage.py está dentro de la carpeta primeraWeb
+--> Se puede acceder a la página del proyecto en 127.0.0.1:8000
+--> Me da ciertos errores y quiere que haga una migración: python manage.py migrate
+--> Si me dice que el puerto está en uso, cerrar y abrir
+--> CTRL + C para cerrar el servidor
+=========================================================================
+
+Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 19:33
 
 Comprobando, probando
