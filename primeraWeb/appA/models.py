@@ -4,7 +4,7 @@ from django.db import models
 class Cliente(models.Model):
     nombre = models.CharField(max_length=50)
     fecha = models.DateTimeField()
-    nombreEmpleado = models.ForeignKey('Empleados') #conecto con la otra tabla o modelo
+    nombreEmpleado = models.ForeignKey('Empleados',on_delete=models.SET_NULL,null=True) #conecto con la otra tabla o modelo
 
     def __str__(self):
         return f"Cliente: {self.nombre} -Vendedor: {self.nombreEmpleado.nombre} - [{self.fecha.strftime('%Y-%m-%d %H:%M:%S')}]"

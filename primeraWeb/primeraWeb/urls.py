@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from appA.views import misClientes # Importa la vista misClientes desde appA.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', misClientes, name='misClientes'),  # Ruta para la vista misClientes
 ]

@@ -36,8 +36,70 @@ Noveno, dentro de mi aplicación elijo los modelos (appA >> models.py)
 --> Por ejemplo, dos tablas o modelos: cliente y vendedor
 --> No lo escribo todo. Ver contenido. 
 
+Hay que hacer un python manage.py makemigrations  (no sé muy bien por qué; es como consolidar los datos ¿?)
+Una vez hecho, hay que hacer python manage.py migrate --> esto permite crear en la bbdd sqlite las tablas que necesita 
+
+================================================================
+
+Decimo, crear una vista
+--> en la aplicación, creamos una vista. views.py
+--> llamo a las clses de models: from .models import Cliente, Empleados y from django import HttpResponse
+---> Debe quedar así
+
+from django.shortcuts import render
+from .models import Cliente, Empleados
+from django.http import HttpResponse
+# Create your views here.
+
+def misClientes(request):
+    objeto = Cliente.objects.all().values('nombre')  # Obtiene todos los objetos de la tabla Cliente
+    print(objeto)  # Imprime los objetos obtenidos en la consola del servidor
+    response_var="<h1>Hola</h1>"  # Variable para almacenar la respuesta HTML
+    for cada in objeto:
+        response_var += f'<h2>Cliente{cada}</h2><br>'
+    return HttpResponse(response_var)  # Devuelve el nombre del cliente
+
+======================================================
+
+Unceavo, de la parte de las URLs
+
+from django.contrib import admin
+from django.urls import path
+from appA.views import misClientes # --> Importa la vista misClientes desde appA.views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', misClientes, name='misClientes'),  # --> Ruta para la vista misClientes
+]
+
+===========================================================
+
+Doceavo, estamos en condiciones de hacer de nuevo;  python manage.py runserver
 
 
-Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 33:51
+===========================================================================
 
-Comprobando, probando
+Treceavo, añadir datos. Para ello lo mejor es crear una cuenta de usuario administrador con 
+
+python manage.py createsuperuser 
+
+Voy a poner usuario/usuario y gmail coordinador.tde@seritium.es. Bypass sus consejos
+
+ejecutar python manage.py runserver, entrar y añadir /admin a la URL 127.0.0.1:8000
+
+Si quiero administrar las tablas debo añadir los modelos que he creado en admin.py 
+
+from django.contrib import admin
+from .models import Cliente, Empleados
+
+# Register your models here.
+admin.site.register(Cliente)
+admin.site.register(Empleados)
+
+
+=====================================================================
+
+
+Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 46:45
+
+Comprobando, probando  
