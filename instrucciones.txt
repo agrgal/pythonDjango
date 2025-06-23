@@ -18,7 +18,26 @@ Septimo, debo crear una aplicación
 --> Se crea con python manage.py startapp [nombre de la app] . Yo le voy a llamar appA 
 --> python manage.py startapp appA
 
+==========================================================================
 
-Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 21:10
+Octavo, incluir en settings (primeraWeb >> primeraWeb) nuestra aplicación.
+--> En el apartado INSTALLED_APPS agrego un dato que es el nombre de nuestra aplicación
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    ......
+    'django.contrib.staticfiles',
+    'appA' 
+]
+
+=====================================================================
+
+Noveno, dentro de mi aplicación elijo los modelos (appA >> models.py)
+--> entidades o tablas que se asignan a la base de datos.
+--> Por ejemplo, dos tablas o modelos: cliente y vendedor
+--> No lo escribo todo. Ver contenido. 
+
+
+
+Seguir viendo el vídeo https://www.youtube.com/watch?v=_WLkr4Rw5-Q a partir del minuto 33:51
 
 Comprobando, probando
